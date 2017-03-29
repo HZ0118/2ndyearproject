@@ -28,15 +28,15 @@
             <div class="navbar-header">
               <a class="navbar-brand" href="@routes.HomeController.index()">Irish Flights</a>
             </div>
-                <ul class="nav navbar-nav">
-                <li @if(title =="Home"){class="active"}><a href="#">Home</a></li>
-                <li @if(title =="Anime Movies"){class="active"}><a href="#">Flight</a></li>
-                <li @if(title =="Anime Series"){class="active"}><a href="#">My Bookings</a></li>
-                <li @if(title =="Manga"){class="active"}><a href="#">Discounts</a></li>
-</ul>
+            <ul class="nav navbar-nav">
+                <li @if(title =="Home"){class="active"}><a href="@routes.HomeController.index()">Home</a></li>
+                <li @if(title =="Flight"){class="active"}><a href="#">Flight</a></li>
+                <li @if(title =="Booking"){class="active"}><a href="#">My Bookings</a></li>
+                <li @if(title =="Discount"){class="active"}><a href="#">Discounts</a></li>
+            </ul>
           <ul class="nav navbar-nav navbar-right">
             <li @if(title =="Signup"){class="active"}><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li @if(title =="Login"){class="active"}><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li @if(title =="Login"){class="active"}><a href="@routes.LoginController.login()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
           </div>
         </nav>
@@ -45,7 +45,6 @@
         @content
 
         <footer class="container-fluid">
-        <p>Copyright &#64; 2016 irishflights.com All Rights Reserved.</p>
         </footer>
     </body>
 </html>

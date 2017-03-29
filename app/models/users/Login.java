@@ -14,7 +14,7 @@ public class Login{
 	}
 
 	public String getEmail(){
-	     reutrn email;
+	     return email;
 	}
 
 	public void setEmail(String email){
