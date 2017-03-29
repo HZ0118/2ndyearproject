@@ -41,6 +41,12 @@ public class Flight extends Model {
         this.routeID = routeID;
     }
 
+    public static Finder<Integer,Flight> find = new Finder<Integer,Flight>(Flight.class);
+
+    public static List<Flight> findAll() {
+	return Flight.find.all();
+    }
+
     //Getter Methods
     public int getID(){
         return flightID;

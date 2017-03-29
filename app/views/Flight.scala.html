@@ -1,0 +1,27 @@
+@(flights: List[models.Flight])
+@main("Flight"){
+    <table class="table table-bordered table-hover table-condensed">
+        <thead>
+        <tr>
+            <th>Flight</th>
+            <th>Route</th>
+            <th>Departure Date</th>
+            <th>Arrival Time</th>
+            <th>Departure Time</th>
+            <th>Aircraft</th>
+        </tr>
+        </thead>
+        <tbody>
+            @for(f <- flights) {
+                <tr>
+                    <td class="numeric">@f.getID</td>
+                    <td class="numeric">@f.getRouteID</td>
+                    <td>@f.getDate</td>
+                    <td>@f.getArrTime</td>
+                    <td>@f.getDepTime</td>
+                    <td>@f.getAircraftID</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
