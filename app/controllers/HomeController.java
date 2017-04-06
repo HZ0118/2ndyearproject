@@ -24,14 +24,35 @@ public class HomeController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
-    public Result index() {
-        return ok(index.render("Your new application is ready."));
-    }
 
-    /*public Result flights() {
-        List<Flight> flightsList = Flight.findAll();
-        return ok(flights.render(flightsList));
-    }*/
+  private FormFactory formFactory;
+
+	@Inject
+	public HomeController(FormFactory f) {
+		this.formFactory = f;
+	}
+
+  public Result index() {
+    return ok(index.render("Your new application is ready."));
+  }
+
+  public Result flights() {
+    List<Flight> flightsList = Flight.findAll();
+    return ok(list.render(flightsList));
+  }
+
+  public Result addFlight(){
+		Form<Flight> addFlightForm = formFactory.form(Flight.class);
+		return ok(addFlight.render(addFlightForm));
+  }
+
+	public Result addFlightSubmit(){
+		Form<Flight> newFlightForm = formFactory.form(Product.class).bindFromRequest();
+		if(newFormFactory
+	}
+  /*private User getUserFromSession() {
+	  return User.getUserById(session().get("email"));
+  }*/
 
 }
 
